@@ -12,7 +12,6 @@ with open("CALORIES.txt", "r") as f:
             elves.append(elf_calories)
             elf_calories = 0
             
-        
     print('Elf',elves.index(max(elves)),'is carrying',str(max(elves)),'calories')
     
     elves.sort()
