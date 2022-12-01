@@ -1,4 +1,4 @@
-# Advent Of Code Day 1
+# Advent Of Code Day 2
 
 with open("CALORIES.txt", "r") as f:
 
