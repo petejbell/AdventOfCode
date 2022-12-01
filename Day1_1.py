@@ -11,6 +11,5 @@ with open("CALORIES.txt", "r") as f:
         else:
             elves.append(elf_calories)
             elf_calories = 0
-            
-        
+
     print('Elf',elves.index(max(elves)),'is carrying',str(max(elves)),'calories')
