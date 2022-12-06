@@ -16,7 +16,7 @@ class Stack():
             print('***stack underflow***')
         else:
             #return(self.stack[self.pointer])
-            self.stack.remove(self.stack[self.pointer])
+            del self.stack[-1]
             self.pointer -= 1
     
     def draw_stack(self):

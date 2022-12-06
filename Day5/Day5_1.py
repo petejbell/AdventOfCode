@@ -53,7 +53,6 @@ for each in text8:
     stack8.push(each)
 for each in text9:
     stack9.push(each)
-
       
 with open('input.txt') as f:
     instructions = f.readlines()
