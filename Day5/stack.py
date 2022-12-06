@@ -18,7 +18,6 @@ class Stack():
             #return(self.stack[self.pointer])
             self.stack.remove(self.stack[self.pointer])
             self.pointer -= 1
-  
     
     def draw_stack(self):
         for i in range(len(self.stack)-1, -1, -1):

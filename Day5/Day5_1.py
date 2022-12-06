@@ -66,17 +66,17 @@ with open('input.txt') as f:
                 movefrom = int(instruction[8])
                 moveto = int(instruction[13])
                 for i in range(moves):
-                        copy = stacks[movefrom-1].gettop()
-                        stacks[moveto-1].push(copy)
-                        stacks[movefrom-1].pop()
+                    copy = stacks[movefrom-1].gettop()
+                    stacks[moveto-1].push(copy)
+                    stacks[movefrom-1].pop()
             else:
                 moves = int(instruction[0])
                 movefrom = int(instruction[7])
                 moveto = int(instruction[12])
                 for i in range(moves):
-                        copy = stacks[movefrom-1].gettop()
-                        stacks[moveto-1].push(copy)
-                        stacks[movefrom-1].pop()
+                    copy = stacks[movefrom-1].gettop()
+                    stacks[moveto-1].push(copy)
+                    stacks[movefrom-1].pop()
 
 crates = 0
 for stack in stacks:
