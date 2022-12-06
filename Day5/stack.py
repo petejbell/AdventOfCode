@@ -9,20 +9,15 @@ class Stack():
     def push(self, item):
         self.stack.append(item)
         self.pointer += 1
-        #self.draw_stack()
     
     def pop(self):
         #check for underflow
         if self.pointer == -1:
             print('***stack underflow***')
         else:
+            #return(self.stack[self.pointer])
             self.stack.remove(self.stack[self.pointer])
             self.pointer -= 1
-    #       print(self.stack[-1])
-    #  self.draw_stack()
-    #remove item on stack pointed to by pointer
-    #move the pointer down
-    #self.draw_stack()
   
     
     def draw_stack(self):
@@ -31,9 +26,13 @@ class Stack():
   
     
     def peek(self):
-        #output the top item of the stack
+        #print the top item of the stack
         print(self.stack[self.pointer])
     
     def gettop(self):
-        #output the top item of the stack
+        #get the top item of the stack
         return(self.stack[self.pointer])
+    
+    def qty(self):
+        #get the number of crates in the stack
+        return(len(self.stack))

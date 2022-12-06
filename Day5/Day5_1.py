@@ -1,5 +1,6 @@
 from stack import *
-    
+
+# This is horrible and needs sorting
 stacks = []
 stack1 = Stack()
 stack2 = Stack()
@@ -11,6 +12,7 @@ stack7 = Stack()
 stack8 = Stack()
 stack9 = Stack()
 
+# This is horrible and needs sorting
 stacks.append(stack1)
 stacks.append(stack2)
 stacks.append(stack3)
@@ -21,6 +23,7 @@ stacks.append(stack7)
 stacks.append(stack8)
 stacks.append(stack9)
 
+# Lovely hard-coded input !!
 text1 = 'TPZCSLQN'
 text2 = 'LPTVHCG'
 text3 = 'DCZF'
@@ -31,6 +34,7 @@ text7 = 'VWGBD'
 text8 = 'NJSQHW'
 text9 = 'RCQFSLV'
 
+# This is horrible and needs sorting
 for each in text1:
     stack1.push(each)
 for each in text2:
@@ -49,7 +53,8 @@ for each in text8:
     stack8.push(each)
 for each in text9:
     stack9.push(each)
-   
+
+      
 with open('input.txt') as f:
     instructions = f.readlines()
     for instruction in instructions:
@@ -61,17 +66,20 @@ with open('input.txt') as f:
                 movefrom = int(instruction[8])
                 moveto = int(instruction[13])
                 for i in range(moves):
-                    copy = stacks[movefrom-1].gettop()
-                    stacks[moveto-1].push(copy)
-                    stacks[movefrom-1].pop()
+                        copy = stacks[movefrom-1].gettop()
+                        stacks[moveto-1].push(copy)
+                        stacks[movefrom-1].pop()
             else:
                 moves = int(instruction[0])
                 movefrom = int(instruction[7])
                 moveto = int(instruction[12])
                 for i in range(moves):
-                    copy = stacks[movefrom-1].gettop()
-                    stacks[moveto-1].push(copy)
-                    stacks[movefrom-1].pop()
-for each in stacks:
-    each.peek()      
-                
+                        copy = stacks[movefrom-1].gettop()
+                        stacks[moveto-1].push(copy)
+                        stacks[movefrom-1].pop()
+
+crates = 0
+for stack in stacks:
+    stack.peek() # Output the top crate on each stack
+    crates += stack.qty() # Have I still got all the crates?
+print(crates)
