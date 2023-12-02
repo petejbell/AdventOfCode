@@ -1,48 +1,24 @@
-# AoC Day 1.2
+# AoC Day 2.2
 
-number_dict = {
-    'one': 1,
-    'two': 2,
-    'three': 3,
-    'four': 4,
-    'five': 5,
-    'six': 6,
-    'seven': 7,
-    'eight': 8,
-    'nine': 9
-}
-
-with open('2023/Day01/input.txt', 'r') as f:
-    total_cal = 0
-    count = 0
-    for line in f:
-        backwards = line[::-1]
-        first_digit = ''
-        last_digit = 0
-        count += 1
-        numbers = {}
-
-        for i in number_dict:
-            if i in line:
-                numbers.update({line.find(i): number_dict.get(i)})
-
-        for i in number_dict:
-            ir = i[::-1]
-            if ir in backwards:
-                numbers.update(
-                    {len(backwards)-backwards.find(ir)-1: number_dict.get(ir[::-1])})
-
-        for n in line:
-            if n.isdigit():
-                first_digit = n
-                numbers.update({line.find(n): int(n)})
-
-        for n in backwards:
-            if n.isdigit():
-                numbers.update({len(backwards)-backwards.find(n)-1: int(n)})
-
-        line_calvalue = str(numbers[min(numbers)]) + str(numbers[max(numbers)])
-        #print(count, int(line_calvalue))
-        total_cal += int(line_calvalue)
-
-    print(total_cal)
+power = 0
+with open('2023/Day02/input.txt', 'r') as f:
+    for game in f:
+        max_red = 0
+        max_green = 0
+        max_blue = 0
+        game = game[4:]
+        gamenumber = int(game.split(':')[0].strip())
+        game = game.split(': ')[1].strip().split('; ')
+        for hand in game:
+            cubes = hand.split(', ')
+            for colour in cubes:
+                cube_count = int(colour.split(' ')[0])
+                cube_col = colour.split(' ')[1]                    
+                if cube_count > max_blue and cube_col == 'blue':
+                    max_blue = cube_count
+                elif cube_count > max_green and cube_col == 'green':
+                    max_green = cube_count
+                elif cube_count > max_red and cube_col == 'red':
+                    max_red = cube_count
+        power += max_blue * max_green * max_red            
+print(power)
