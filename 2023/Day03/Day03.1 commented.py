@@ -1,3 +1,5 @@
+# AoC Day 3.1
+
 allow = False
 sum_part_numbers = []
 
