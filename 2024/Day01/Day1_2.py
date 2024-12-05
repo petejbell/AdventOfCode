@@ -1,4 +1,4 @@
-# AoC Day 1.1
+# AoC Day 1.2
 
 count = 0
 left_nums = []
